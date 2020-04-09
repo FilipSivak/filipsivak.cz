@@ -1,9 +1,144 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
+    <link rel="stylesheet" href="main.css">
+    <title>Filip Sivák</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <div id="border">
+        <header>
+            <div id="personal-photo">
+                
+            </div>
+            <address>
+                <h1>Ing. Filip Sivák</h1>
+                <a href="tel:+420775507312">+420 775 507 312</a>
+                <a href="mailto:sivakfil@gmail.com">sivakfil@gmail.com</a>
+                <a href="https://www.linkedin.com/in/filip-sivak/">https://www.linkedin.com/in/filip-sivak/</a>
+            </address>
+        </header>
+
+        <section class="reference">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="img-container">
+                    <img src="img/ctu_fel_logo.jpg" alt="Logo CTU FEL">
+                </div>
+                <div>
+                    <h3><a href="https://fel.cvut.cz">Faculty of Electrical Engineering, Czech Technical University in Prague</a></h3>
+                    <ul>
+                        <li>Master of computer vision</li>
+                        <li>2015 - 2018</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img-container">
+                    <img src="img/ctu_fel_logo.jpg" alt="Logo CTU FEL">
+                </div>
+                <div>
+                    <h3><a href="https://fel.cvut.cz">Faculty of Electrical Engineering, Czech Technical University in Prague</a></h3>
+                    <ul>
+                        <li>Bachelor of software engineering</li>
+                        <li>2011 - 2015</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="reference">
+            <h2>Experience (+5 years)</h2>
+            <div class="item">
+                <div class="img-container">
+                    <img src="img/profinit_logo.jpg" alt="Logo Profinit.eu">
+                </div>
+                <div>
+                    <h3><a href="profinit.eu">Profinit.eu</a></h3>
+                    <ul>
+                        <li>Consult agency</li>
+                        <li>Java EE liferay development / Apache Spark (big data) / R + docker engineering support for datascience</li>
+                        <li>2015 - 2019</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img-container">
+                    <img src="img/upp.png" alt="Logo upp.cz">
+                </div>
+                <div>
+                    <h3><a href="upp.cz">UPP.cz</a></h3>
+                    <ul>
+                        <li>Film VFX studio</li>
+                        <li>Unreal Engine / VR / arduino / Deep learning</li>
+                        <li>2019 - present</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="reference">
+            <h2>References</h2>
+            <div class="just">
+                Since I'm tied up by NDA agreements I cannot talk about work for companies I've worked for. The clients included big financial, 
+                telecommunication and pharmaceutical corporations. However, I have some side projects that I've been working on in my free time that 
+                are implemented up to high technological standard.
+            </div>
+            <div class="item">
+                <div class="img-container">
+                    <img src="img/spring.png" alt="Logo of spring framework">
+                </div>
+                <div>
+                    <h3>Scholarship application web app</h3>
+                    <ul>
+                        <li>Integration with google forms</li>
+                        <li>Angular + TypeScript</li>
+                        <li>Spring framework (Java) + Mongodb</li>
+                        <li>Analytics in R</li>
+                        <li>Reading marks from QR code on testament via python + opencv</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="technologies">
+            <h2>Technologies</h2>
+            <p>I consider myself language-agnostic programmer. I'll do backend in assembly for you, If that's what you want.</p>
+            <table>
+                <tr>
+                    <td>Web</td>
+                    <td>HTML5, CSS, SCSS, JavaScript, TypeScript, Angular, React (hooks)</td>
+                </tr>
+                <tr>
+                    <td>Backend</td>
+                    <td>PHP, Java, Python (flask)</td>
+                </tr>
+                <tr>
+                    <td>Big-data</td>
+                    <td>Apache spark (scala or python)</td>
+                </tr>
+                <tr>
+                    <td>Datascience</td>
+                    <td>Python (numpy, opencv), R (tidyverse), Matlab (I don't have a license though)</td>
+                </tr>
+                <tr>
+                    <td>DevOps</td>
+                    <td>docker, ubuntu, jenkins</td>
+                </tr>
+                <tr>
+                    <td>Game dev</td>
+                    <td>Unreal engine (C++)</td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+
+    <canvas id="canvas-background"></canvas>
+
     <script src="/main.bundle.js"></script>
 </body>
 </html>
