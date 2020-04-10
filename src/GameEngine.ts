@@ -1,0 +1,63 @@
+import { Vector } from './VectorMath'
+
+export interface Actor {
+    id: number,
+    engine: GameEngine,
+    update: (time: number) => void,
+    render: () => void
+}
+
+export class GameEngine {
+    context2d: CanvasRenderingContext2D;    
+    actors: Actor[] = [];
+    lastFrameTime: number;
+    mouseCurrent = new Vector(0, 0);
+    mouseLastFrame = new Vector(0, 0);
+    mouseDelta = new Vector(0, 0);
+
+    constructor(public canvas: HTMLCanvasElement) {
+        this.context2d = canvas.getContext("2d");
+        console.log("Canvas initialized!");
+
+        document.addEventListener("mousemove", (event) => {
+            this.mouseCurrent.x = event.x;
+            this.mouseCurrent.y = event.y;
+        })
+    }
+
+    addActor(actor: Actor) {
+        if(!actor) {
+            throw "Cannot add null actor!";
+        }
+        this.actors.push(actor);
+        actor.id = this.actors.length;
+    }
+
+    getActors() : Actor[] {
+        return this.actors;
+    }
+
+    run(): void {
+        this.lastFrameTime = Date.now();
+        requestAnimationFrame(this.update.bind(this));
+    }
+
+    update(): void {
+        const elapsed = (Date.now() - this.lastFrameTime) / 1000;
+        this.mouseDelta = this.mouseCurrent.copy().substract(this.mouseLastFrame);
+
+        // clear canvas
+        this.context2d.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // render all actors
+        this.actors.forEach(actor => {
+            actor.update(elapsed);
+            actor.render();
+        })
+    
+        this.lastFrameTime = Date.now();
+        this.mouseLastFrame = this.mouseCurrent.copy();
+        requestAnimationFrame(this.update.bind(this)); 
+    }
+}
+
