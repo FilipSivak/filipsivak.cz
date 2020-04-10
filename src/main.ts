@@ -1,4 +1,5 @@
-import { Greeter } from './greeter';
+import { CanvasEffect } from './CanvasEffect';
 
-const g = new Greeter('Juri');
-g.greet();
+window.addEventListener("DOMContentLoaded", () => {
+    const canvas = new CanvasEffect(document.querySelector("canvas"));
+});
