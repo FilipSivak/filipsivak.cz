@@ -13,6 +13,22 @@ export class Vector {
         return this;
     }
 
+    clamp(minX: number, maxX: number, minY: number, maxY: number) {
+        this.x = Math.max(Math.min(minX, this.x), maxX);
+        this.y = Math.max(Math.min(minY, this.y), maxY);
+    }
+
+    size(): number {
+        return Math.sqrt((this.x * this.x) + (this.y * this.y));
+    }
+
+    normalize(): Vector {
+        const size = this.size()
+        this.x /= size
+        this.y /= size
+        return this;
+    }
+
     scale(scalar: number) {
         this.x *= scalar;
         this.y *= scalar;

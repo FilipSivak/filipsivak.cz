@@ -4,6 +4,8 @@ import {Vector} from './VectorMath'
 class DotActor implements Actor {
 
     public id: number;
+    public impulse = new Vector(0, 0);
+    public impulseDiminishingRate = .9;
 
     constructor(public engine: GameEngine, public location: Vector, public speed: Vector) {
 
@@ -11,6 +13,7 @@ class DotActor implements Actor {
 
     update(time: number) {
         this.location.add(this.speed.copy().add(this.engine.mouseDelta.copy().scale(2)).scale(time));
+        this.location.add(this.impulse.copy().scale(time));
 
         if(this.location.x > this.engine.canvas.width) {
             this.location.x -= this.engine.canvas.width;
@@ -27,6 +30,13 @@ class DotActor implements Actor {
         if(this.location.y < 0) {
             this.location.y += this.engine.canvas.height;
         }
+
+        const mouseDistance = this.location.distance(this.engine.mouseCurrent);
+        if(mouseDistance < 200) {
+            this.impulse = this.location.copy().substract(this.engine.mouseCurrent).normalize().scale(80 * (1 - (mouseDistance / 200)));
+        }
+
+        this.impulse.scale(this.impulseDiminishingRate);
     }
 
     render() {
