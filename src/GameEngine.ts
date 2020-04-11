@@ -20,8 +20,8 @@ export class GameEngine {
         console.log("Canvas initialized!");
 
         document.addEventListener("mousemove", (event) => {
-            this.mouseCurrent.x = event.x;
-            this.mouseCurrent.y = event.y;
+            this.mouseCurrent.x = event.pageX;
+            this.mouseCurrent.y = event.pageY;
         })
     }
 
