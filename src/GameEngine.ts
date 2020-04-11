@@ -17,7 +17,6 @@ export class GameEngine {
 
     constructor(public canvas: HTMLCanvasElement) {
         this.context2d = canvas.getContext("2d");
-        console.log("Canvas initialized!");
 
         document.addEventListener("mousemove", (event) => {
             this.mouseCurrent.x = event.pageX;
@@ -27,7 +26,7 @@ export class GameEngine {
 
     addActor(actor: Actor) {
         if(!actor) {
-            throw "Cannot add null actor!";
+            throw "Cannot add falsy actor!";
         }
         this.actors.push(actor);
         actor.id = this.actors.length;
