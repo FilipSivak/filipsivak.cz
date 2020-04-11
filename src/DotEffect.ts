@@ -36,6 +36,10 @@ class DotActor implements Actor {
             this.impulse = this.location.copy().substract(this.engine.mouseCurrent).normalize().scale(80 * (1 - (mouseDistance / 200)));
         }
 
+        if(this.engine.scrollDelta != 0) {
+            this.impulse.add(this.speed.copy().scale(10 * time * Math.abs(this.engine.scrollDelta)));
+        }
+
         this.impulse.scale(this.impulseDiminishingRate);
     }
 

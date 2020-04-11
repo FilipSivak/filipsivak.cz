@@ -1,4 +1,5 @@
 import { Vector } from './VectorMath'
+import { runInThisContext } from 'vm';
 
 export interface Actor {
     id: number,
@@ -11,9 +12,13 @@ export class GameEngine {
     context2d: CanvasRenderingContext2D;    
     actors: Actor[] = [];
     lastFrameTime: number;
+
     mouseCurrent = new Vector(0, 0);
     mouseLastFrame = new Vector(0, 0);
     mouseDelta = new Vector(0, 0);
+
+    scrollDelta = 0;
+    scrollLastFramePosition = 0;
 
     constructor(public canvas: HTMLCanvasElement) {
         this.context2d = canvas.getContext("2d");
@@ -44,7 +49,8 @@ export class GameEngine {
     update(): void {
         const elapsed = (Date.now() - this.lastFrameTime) / 1000;
         this.mouseDelta = this.mouseCurrent.copy().substract(this.mouseLastFrame);
-
+        this.scrollDelta = window.scrollY - this.scrollLastFramePosition;
+        
         // clear canvas
         this.context2d.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
@@ -56,6 +62,7 @@ export class GameEngine {
     
         this.lastFrameTime = Date.now();
         this.mouseLastFrame = this.mouseCurrent.copy();
+        this.scrollLastFramePosition = window.scrollY;
         requestAnimationFrame(this.update.bind(this)); 
     }
 }
