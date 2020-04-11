@@ -11,4 +11,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const engine = new GameEngine(canvasElement);
     const dotEffect = new DotEffect(engine, 200);
     dotEffect.run();
+
+    window.addEventListener("resize", (event) => {
+        console.log(event);
+        canvasElement.width = document.documentElement.clientWidth;
+        canvasElement.height = document.documentElement.clientHeight;
+    });
 });
