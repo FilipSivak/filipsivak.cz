@@ -46,10 +46,13 @@ a:hover {
     text-decoration: underline;
 }
 
-address {
+#address-block {
     flex-grow: 1;
-    font-style: normal;
     text-align: right;
+}
+
+address {
+    font-style: normal;
 }
 
 address > .address-line > a {
