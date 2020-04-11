@@ -6,8 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
     canvasElement.width = document.body.clientWidth;
     canvasElement.height = document.body.clientHeight;
 
-    console.log(document.body.clientWidth, document.body.clientHeight);
-
     const engine = new GameEngine(canvasElement);
     const dotEffect = new DotEffect(engine, 200);
     dotEffect.run();
