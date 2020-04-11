@@ -34,6 +34,14 @@ a {
     text-decoration: none;
 }
 
+a.underlined {
+    text-decoration: underline;
+}
+
+a.underlined:hover {
+    color: white;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -44,11 +52,8 @@ address {
     text-align: right;
 }
 
-address > a {
+address > .address-line > a {
     font-size: 22px;
-    display: block;
-    color: #eaeaea;
-    text-decoration: none;
     line-height: 35px;
 }
 
@@ -94,14 +99,22 @@ address > a {
 }
 
 @media print {
+    canvas {
+        display: none;
+    }
+
     #personal-photo {
         display: none;
     }
 
-    body, a, address > a, td {
+    body, a, address > .address-line > a, td {
         font-size: 11px;
         line-height: normal;
         color: black;
+    }
+
+    a.underlined {
+        text-decoration: none;
     }
 
     .technologies td {
