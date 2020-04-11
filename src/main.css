@@ -93,7 +93,7 @@ address > .address-line > a {
     opacity: .4;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   
     header {
         flex-direction: column;
@@ -111,7 +111,7 @@ address > .address-line > a {
     
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .reference .img-container {
         display: none;
     }
@@ -146,6 +146,10 @@ address > .address-line > a {
     }
 
     img {
+        display: none;
+    }
+
+    .no-print, .reference > .item.no-print {
         display: none;
     }
 }
