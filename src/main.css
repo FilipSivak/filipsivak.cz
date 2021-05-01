@@ -2,7 +2,7 @@
 
 body {
     margin: 10px;
-    background-color: black;
+    background-color: #35363A;
     color: #eaeaea;
 
     font-family: "open_sansregular";
@@ -30,8 +30,8 @@ header {
 }
 
 a {
-    color: #eaeaea;
-    text-decoration: none;
+    color: #FFF760;
+    text-decoration: underline;
 }
 
 a.underlined {
@@ -43,8 +43,14 @@ a.underlined:hover {
 }
 
 a:hover {
+    color: #fff200;
     text-decoration: underline;
 }
+
+/*h2 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFF760;
+}*/
 
 #address-block {
     flex-grow: 1;
@@ -90,7 +96,7 @@ address > .address-line > a {
     top:0;
     left:0;
     z-index:-1;
-    opacity: .4;
+    opacity: .2;
 }
 
 @media screen and (max-width: 600px) {
