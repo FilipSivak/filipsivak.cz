@@ -1,11 +1,11 @@
-@import "fonts/stylesheet.css";
+@import "fonts/iosevka.css";
 
 body {
     margin: 10px;
     background-color: #35363A;
     color: #eaeaea;
 
-    font-family: "open_sansregular";
+    font-family: "Iosevka Web";
 }
 
 #border {
@@ -31,7 +31,7 @@ header {
 
 a {
     color: #FFF760;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a.underlined {
