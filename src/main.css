@@ -2,7 +2,7 @@
 
 body {
     margin: 10px;
-    background-color: #35363A;
+    background-color: #292528;
     color: #eaeaea;
 
     font-family: "Iosevka Web";
@@ -30,7 +30,7 @@ header {
 }
 
 a {
-    color: #FFF760;
+    color: #FFA32F;
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ a.underlined:hover {
 }
 
 a:hover {
-    color: #fff200;
+    color: #FFA32F;
     text-decoration: underline;
 }
 
